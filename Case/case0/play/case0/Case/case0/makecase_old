@@ -1,0 +1,14 @@
+#!/bin/bash
+# ケースファイルを多量に作成する
+cd `dirname $0`
+rm -rf ./Case
+rm -rf ../tmpfolder
+cp -r . ../tmpfolder
+rm -rf ../tmpfolder/.git
+mkdir ./Case
+
+RENGE=$(( $1-1 ))
+for i in `seq 0 $RENGE`
+do 
+    cp -r ../tmpfolder ./Case/case$i
+done
